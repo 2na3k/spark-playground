@@ -33,3 +33,6 @@ Random fact:
 - Is the method
 - Is not supported by Delta Lake (what)
   - Legit reason from DBX: Have clustering, and z-ordering clustering
+  
+### Salting
+- Is a method that can be used when the hash-key is not evenlly distributed.
