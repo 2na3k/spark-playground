@@ -1,17 +1,10 @@
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>kms-api-examples</groupId>
-    <artifactId>kms-api-examples</artifactId>
+    <groupId>spark-playground</groupId>
+    <artifactId>spark-playground</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <dependencies>
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpclient</artifactId>
-            <version>4.3.2</version>
-            <type>jar</type>
-            <scope>compile</scope>
-        </dependency>
         <dependency>
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-sql-kafka-0-10_2.12</artifactId>
@@ -20,7 +13,6 @@
         </dependency>
     </dependencies>
     <build>
-    
     <plugins>
         <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
