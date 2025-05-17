@@ -5,3 +5,7 @@ pandas
 setuptools
 pyarrow
 pydantic
+schedule
+faker
+kafka-python
+ruff
