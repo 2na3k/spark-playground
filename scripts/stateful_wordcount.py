@@ -9,6 +9,8 @@ from pyspark.sql.types import (
 
 import os
 
+chkp_location = str(os.getcwd()) + "/chkp_location"
+
 
 def resolve_dependencies() -> str:
     """
@@ -61,6 +63,9 @@ def get_spark_session() -> SparkSession:
         "spark.sql.streaming.stateStore.providerClass",
         "org.apache.spark.sql.execution.streaming.state.RocksDBStateStoreProvider",
     )
+    spark.conf.set(
+        "spark.sql.streaming.checkpointLocation", chkp_location
+    )
     return spark
 
 
@@ -77,9 +82,11 @@ def upsert_sink(spark, df):
 
     (
         df
+        .selectExpr("topic", "CAST(key AS STRING)", "CAST(value AS STRING)")
         .writeStream
-        # .foreachBatch(for_each_batch_fn)
-        .format("console")
+        .format("kafka")
+        .option("topic", "sink-wordcount")
+        .option("kafka.bootstrap.servers", "localhost:9094") 
         .trigger(processingTime='2 seconds')
         .start()
         .awaitTermination()

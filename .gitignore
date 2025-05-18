@@ -3,3 +3,6 @@ venv
 tmp
 .ipynb_checkpoints/*
 .ropeproject
+chkp_location
+.ruff_cache
+.vscode

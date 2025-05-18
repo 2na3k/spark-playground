@@ -10,7 +10,6 @@ from kafka import KafkaProducer
 kafka_nodes = "localhost:9094"
 myTopic = "source-wordcount"
 
-
 def gen_data():
     faker = Faker()
 
