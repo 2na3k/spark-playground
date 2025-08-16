@@ -6,3 +6,4 @@ tmp
 chkp_location
 .ruff_cache
 .vscode
+target

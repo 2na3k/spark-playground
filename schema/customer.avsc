@@ -1,0 +1,20 @@
+{
+	"namespace": "example.avro",
+	"type": "record",
+	"name": "User",
+	"fields": [
+		{
+			"name": "name",
+			"type": "string"
+		},
+		{
+			"name": "height",
+			"type": {
+				"type": "bytes",
+				"logicalType": "decimal",
+				"precision": 38,
+				"scale": 6
+			}
+		}
+	]
+}

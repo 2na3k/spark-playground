@@ -9,3 +9,4 @@ schedule
 faker
 kafka-python
 ruff
+fastavro
